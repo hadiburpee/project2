@@ -12,4 +12,4 @@ INSERT INTO nexus_rules (state_name, transactionTotal, dollarAmountTotal) VALUES
 INSERT INTO nexus_rules (state_name, transactionTotal, dollarAmountTotal) VALUES ("ID", 800, 50000);
 INSERT INTO nexus_rules (state_name, transactionTotal, dollarAmountTotal) VALUES ("IL", null, 175000);
 INSERT INTO nexus_rules (state_name, transactionTotal, dollarAmountTotal) VALUES ("IN", 100, null);
-INSERT INTO nexus_rules (state_name, transactionTotal, dollarAmountTotal) VALUES ("IA", 10, 200000);
+INSERT INTO nexus_rules (state_name, transactionTotal, dollarAmountTotal) VALUES ("IA", 10, 150000);
