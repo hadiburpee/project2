@@ -14,11 +14,14 @@ var expBars = require("express-handlebars");
 app.engine("handlebars", expBars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/tax-controllers.js");
+// var routes1 = require("./routes/user.js");
+require('./routes')(app);
 
-app.use(routes);
-
+// // app.use(routes1);
+// app.use(routes2);
 
 app.listen(PORT, function () {
     console.log("App now listening at http://localhost:" + PORT);
 });
+
+module.exports = app;
