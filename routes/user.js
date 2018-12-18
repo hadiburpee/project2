@@ -5,6 +5,8 @@ var router = express.Router();
 var userController = require("../controllers/user-controllers.js");
 
 router.get('/', userController.index);
+// router.get('/admin', userController.admin);
+
 
 
 

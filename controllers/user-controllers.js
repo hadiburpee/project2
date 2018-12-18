@@ -1,5 +1,7 @@
 //route for page controllers
 
 exports.index = function(req,res){
-    res.render('index');
+    console.log("user controller");
+    res.render('index.handlebars');
 };
+

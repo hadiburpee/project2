@@ -1,9 +1,9 @@
 module.exports = function(app){
-    const adminPage = require("./routes/admin");
+    const managePage = require("./routes/admin");
     const user = require("./routes/user");
 
 
-    app.use('/admin', adminPage);
+    app.use('/manage', managePage);
     app.use('/', user);
 
 
