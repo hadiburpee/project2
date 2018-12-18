@@ -6,6 +6,4 @@ var userController = require("../controllers/user-controllers.js");
 
 router.get('/', userController.index);
 
-
-
 module.exports = router;
