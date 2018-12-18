@@ -4,6 +4,8 @@ var PORT = process.env.PORT || 8080;
 
 var app = express();
 
+var db = require("./models");
+
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true}));
@@ -18,8 +20,11 @@ app.set("view engine", "handlebars");
 require('./routes.js')(app);
 
 
+
+db.sequelize.sync().then(function () {
 app.listen(PORT, function () {
     console.log("App now listening at http://localhost:" + PORT);
+    });
 });
 
 module.exports = app;

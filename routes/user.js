@@ -8,6 +8,4 @@ router.get('/', userController.index);
 // router.get('/admin', userController.admin);
 
 
-
-
 module.exports = router;
