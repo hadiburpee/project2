@@ -3,8 +3,9 @@
 var express = require("express");
 var router = express.Router();
 
-var adminController = require("../controllers/admin-controllers");
+var managerController = require("../controllers/admin-controllers.js");
 
-router.get('/admin', adminController.index);
+router.get('/', managerController.index);
+console.log("admin route");
 
 module.exports = router;

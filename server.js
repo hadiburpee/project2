@@ -17,10 +17,8 @@ app.engine("handlebars", expBars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // var routes1 = require("./routes/user.js");
-require('./routes')(app);
+require('./routes.js')(app);
 
-// // app.use(routes1);
-// app.use(routes2);
 
 
 db.sequelize.sync().then(function () {
