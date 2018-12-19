@@ -1,7 +1,7 @@
 //route for page controllers
 
-exports.index = function(req,res){
-    console.log("user controller");
-    res.render('index.handlebars');
-};
+var db  = require('../models');
 
+exports.index = function(req, res) {
+    res.render('index');
+};
