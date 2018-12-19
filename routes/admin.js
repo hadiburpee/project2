@@ -8,4 +8,6 @@ var managerController = require("../controllers/admin-controllers.js");
 router.get('/', managerController.index);
 console.log("admin route");
 
+router.post('/', managerController.addRule);
+
 module.exports = router;

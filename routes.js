@@ -9,6 +9,8 @@ module.exports = function(app){
 
 
     app.use('/manage', managePage);
+    app.use('/newRule', managePage);
+
     app.use('/', user);
     app.use('/client', newClient);
 

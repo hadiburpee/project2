@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     
-    var Post = sequelize.define("Post", {
+    var newClient = sequelize.define("newClient", {
         firstName: {
             type:  DataTypes.STRING,
             allowNull: false,
@@ -35,5 +35,5 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
     });
-    return Post;
+    return newClient;
 };
