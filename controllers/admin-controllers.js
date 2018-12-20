@@ -20,5 +20,14 @@ exports.addRule = function (req, res) {
     });
 };
 
-
+exports.index = function (req, res) {
+    db.nexus_rules.findAll({
+        state_name: req.body.state,
+        transaction: req.body.transaction,
+        sales: req.body.sales
+    }).then(function(dbRules) {
+        res.json(dbRules);
+        res.render('manage/rules')
+    });
+}
 
