@@ -3,6 +3,13 @@ var router = express.Router();
 
 var clientController = require("../controllers/client-controller");
 
-router.post('/', clientController.addUser);
+// var userController = require("../controllers/user-controllers.js");
+
+router.get('/', clientController.index);
+
+//uses admin model to check state and transaction threshold
+router.get('/rules', clientController.nexusCheck);
+
+router.post('/addUser', clientController.addUser);
 
 module.exports = router;
