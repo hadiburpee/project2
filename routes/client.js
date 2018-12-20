@@ -8,7 +8,7 @@ var clientController = require("../controllers/client-controller");
 router.get('/', clientController.index);
 
 //uses admin model to check state and transaction threshold
-router.get('/rules', clientController.nexusCheck);
+router.get('/rules/:state', clientController.nexusCheck);
 
 router.post('/addUser', clientController.addUser);
 

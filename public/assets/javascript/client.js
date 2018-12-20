@@ -24,10 +24,12 @@ addClientButton.on('click', function (event) {
         transactions: transactionsInput.val().trim(),
         sales: salesInput.val().trim()
     }
+    var state = clientInfo.state;
 
-    console.log(clientInfo);
+    // console.log(clientInfo);
 
     addUser(clientInfo.firstName, clientInfo.secondName, clientInfo.email, clientInfo.state, clientInfo.transactions, clientInfo.sales);
+    checkNexusRules(clientInfo.state, clientInfo.transactions, clientInfo.sales);
 
     firstNameInput.val("");
     secondNameInput.val("");
@@ -38,7 +40,7 @@ addClientButton.on('click', function (event) {
 
     });
 
-
+    //adds user to database
     function addUser(firstName, secondName, email, state, trans, sales) {
         $.post("/client/addUser", {
             firstName: firstName,
@@ -49,4 +51,32 @@ addClientButton.on('click', function (event) {
             sales: sales
         });
     };
+
+    //logic to check nexus rules and see if user has a match
+    function checkNexusRules(state, trans, sales){
+        console.log("check nexu: " + state)
+        
+        $.ajax({
+            method: "GET",
+            url: "/client/rules/" + state 
+        }).then(function(data){
+        
+            console.log(data);
+            // if(data[0].state_name == null){
+            //     console.log("Statea is not in Database: " + state);
+            // }
+
+            if(data[0].state_name === state){
+                console.log("You have a match: " + state)
+                console.log("Transaction Total in " + state + ": " + data[0].transaction)
+                console.log("Sales Total in " + state + ": " + data[0].sales)
+
+            }
+            else{
+                console.log("Statea is not in Database: " + state);
+            }
+
+            console.log("Compare Information");
+        });
+    }
 });
