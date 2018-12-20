@@ -25,13 +25,14 @@ exports.addUser = function (req, res) {
 //new client search request to compare state tax thresholds
 
 exports.nexusCheck = function(req, res) {
-
-    db.admin-module.findAll({
-        state: req.body.state
-
+    var state = req.params.state;
+    console.log(state);
+    
+    db.nexus_rules.findAll({
+        where:{
+            state_name: state
+        }
     }).then(function(dbNexusCheck){
         res.json(dbNexusCheck);
     });
-
-
 };
