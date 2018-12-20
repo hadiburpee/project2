@@ -40,7 +40,7 @@ addClientButton.on('click', function (event) {
 
 
     function addUser(firstName, secondName, email, state, trans, sales) {
-        $.post("/client", {
+        $.post("/client/addUser", {
             firstName: firstName,
             secondName: secondName,
             email: email,

@@ -1,5 +1,12 @@
 var db = require("../models");
 
+//load homepage
+exports.index = function(req, res) {
+    res.render('index');
+};
+
+
+//new client create request to store information
 
 exports.addUser = function (req, res) {
 
@@ -13,4 +20,18 @@ exports.addUser = function (req, res) {
     }).then(function(dbnewClient) {
         res.json(dbnewClient);
     });
+};
+
+//new client search request to compare state tax thresholds
+
+exports.nexusCheck = function(req, res) {
+
+    db.admin-module.findAll({
+        state: req.body.state
+
+    }).then(function(dbNexusCheck){
+        res.json(dbNexusCheck);
+    });
+
+
 };
