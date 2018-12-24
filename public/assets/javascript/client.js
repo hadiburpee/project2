@@ -55,28 +55,39 @@ addClientButton.on('click', function (event) {
     //logic to check nexus rules and see if user has a match
     function checkNexusRules(state, trans, sales){
         console.log("check nexu: " + state)
-        
+        var custTrans = trans;
+        var custSales = sales;
+
         $.ajax({
             method: "GET",
             url: "/client/rules/" + state 
         }).then(function(data){
         
             console.log(data);
-            // if(data[0].state_name == null){
-            //     console.log("Statea is not in Database: " + state);
-            // }
 
+            //if state is a match for a state in the db, compare the sales and transaction numbers
             if(data[0].state_name === state){
+                $(".clientResults").append(compareRules(state, data[0].transaction, data[0].sales, custTrans, custSales));
+                
+                //old console log testing for data returned from database
                 console.log("You have a match: " + state)
                 console.log("Transaction Total in " + state + ": " + data[0].transaction)
                 console.log("Sales Total in " + state + ": " + data[0].sales)
-
             }
             else{
-                console.log("Statea is not in Database: " + state);
+                console.log("State may not have economic nexus standards: " + state);
             }
-
-            console.log("Compare Information");
         });
     }
+
+    //function to compare rules
+    function compareRules(state, dbTrans, dbSales, custTrans, custSales){
+        if(dbTrans < custTrans || dbSales < custSales){
+            return "You may need to register for sales and use tax in: " + state + ".  Please contact: XXXXXXX";
+        }
+        else{
+            return "You have not crossed the threshold to collect sales and use tax in: " + state;
+        }
+    }
+
 });
