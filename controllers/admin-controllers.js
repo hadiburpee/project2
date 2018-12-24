@@ -1,7 +1,7 @@
 //routes for admin controllers
 var db = require("../models");
 
-exports.index = function(req,res){
+exports.manage = function(req,res){
     console.log("admin controller");
     res.render('manager/manage');
 
@@ -10,7 +10,7 @@ exports.index = function(req,res){
 
 exports.addRule = function (req, res) {
     console.log("Add rule hit");
-
+    
     db.nexus_rules.create({
         state_name: req.body.state,
         transaction: req.body.trans,
@@ -20,14 +20,14 @@ exports.addRule = function (req, res) {
     });
 };
 
-exports.index = function (req, res) {
+exports.rules = function (req, res) {
     db.nexus_rules.findAll({
         state_name: req.body.state,
         transaction: req.body.transaction,
         sales: req.body.sales
     }).then(function(dbRules) {
         res.json(dbRules);
-        res.render('manage/rules')
+        // res.render('manage/rules')
     });
 }
 

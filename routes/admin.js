@@ -5,7 +5,9 @@ var router = express.Router();
 
 var managerController = require("../controllers/admin-controllers.js");
 
-router.get('/', managerController.index);
+router.get('/', managerController.manage);
+router.get('/viewRules', managerController.rules);
+
 console.log("admin route");
 
 router.post('/', managerController.addRule);
