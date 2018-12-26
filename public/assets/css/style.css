@@ -17,10 +17,24 @@ body {
     border-radius: 5px;
 }
 
+.manageForm {
+    border: 1px solid lightgray;
+    background-color: lightgrey;
+    margin-top: 10%;
+    padding: 1%;
+    line-height: 150%;
+    border-radius: 5px;
+}
+
 #addCLient {
     margin-top: 3%;
 }
 
 .row {  
     margin: 2%;
+}
+
+.TitleRule{
+    text-align: center;
+    font-weight: bold;
 }

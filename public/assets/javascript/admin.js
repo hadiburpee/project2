@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    //display current database rules
+    displayRules();
+
 
     // Assign variable to submit button
     var addRuleButton = $('#addRule');
@@ -30,7 +33,7 @@ $(document).ready(function() {
 
         });
     
-    
+        //post request to add rules
         function addRule(state, trans, sales) {
             $.post("/newRule", {
                 state: state,
@@ -39,5 +42,23 @@ $(document).ready(function() {
 
             });
         };
+        //get request to post all rules in database
+        function displayRules(){
+            $.ajax({
+                method: "GET",
+                url: "/manage/viewRules"
+            }).then(function(data){
+                console.log(data);
+                for(i=0; i<data.length; i++){
+                    var rule = "State: " + data[i].state_name + " " +
+                    "Transactions: " + data[i].transaction + " " +
+                    "Sales: " + data[i].sales + " ";
+                    $(".rulesHere").append("<br>" + rule + "<br>");
+                    
+                }
+            });
+        }
+
+
     });
     
