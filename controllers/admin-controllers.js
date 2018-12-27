@@ -15,6 +15,7 @@ exports.addRule = function (req, res) {
         state_name: req.body.state,
         transaction: req.body.trans,
         sales: req.body.sales,
+        both_criteria: req.body.criteria
     }).then(function(dbnewRule) {
         res.json(dbnewRule);
     });
@@ -25,6 +26,7 @@ exports.rules = function (req, res) {
         state_name: req.body.state,
         transaction: req.body.transaction,
         sales: req.body.sales,
+        both_criteria: req.body.criteria
     }).then(function(dbRules) {
         res.json(dbRules);
         // res.render('manage/rules')
@@ -32,13 +34,13 @@ exports.rules = function (req, res) {
 }
 
 // GET function to return all client info from db
-app.get = function(req, res) {
-    var query = {};
-    if (req.query.id) {
-      query.id = req.query.id
-    }
-    db.user_information.findAll({
-      }).then(function(dbClients) {
-        res.json(dbClients)
-    })
+exports.clients = function(req, res) {
+    db.newclients.findAll({
+        firstName: req.body.firstName,
+        secondName: req.body.secondName,
+        email: req.body.email
+    }).then(function(dbnewClient) {
+        console.log(dbnewClient);
+        res.json(dbnewClient);
+    });
 }

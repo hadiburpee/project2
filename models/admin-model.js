@@ -13,9 +13,10 @@ module.exports = function (sequelize, DataTypes) {
             type:  DataTypes.INTEGER,
             allowNull: false,
         },
-        both_critera: {
+        both_criteria: {
             type:  DataTypes.STRING,
             allowNull: false,
+            defaultValue: "either"
         }
     });
     return nexus_rules;
