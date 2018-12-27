@@ -29,7 +29,6 @@ exports.rules = function (req, res) {
         both_criteria: req.body.criteria
     }).then(function(dbRules) {
         res.json(dbRules);
-        // res.render('manage/rules')
     });
 }
 
