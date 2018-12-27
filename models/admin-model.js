@@ -12,25 +12,11 @@ module.exports = function (sequelize, DataTypes) {
         sales: {
             type:  DataTypes.INTEGER,
             allowNull: false,
+        },
+        both_critera: {
+            type:  DataTypes.STRING,
+            allowNull: false,
         }
-        // state: {
-        //     type:  DataTypes.STRING,
-        //     allowNull: false,
-        // },
-        // trans: {
-        //     type:  DataTypes.INTEGER,
-        //     allowNull: false,
-        //     validate: {
-        //         len: [1, 11]
-        //     }
-        // },
-        // sales: {
-        //     type:  DataTypes.INTEGER,
-        //     allowNull: false,
-        //     validate: {
-        //         len: [1, 11]
-        //     }
-        // },
     });
     return nexus_rules;
 };

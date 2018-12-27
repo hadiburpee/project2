@@ -10,6 +10,7 @@ $(document).ready(function() {
     var state = $('#state');
     var trans = $('#trans');
     var sales = $('#sales');
+    var criteria = $('#both_criteria');
     
     
     
@@ -20,25 +21,27 @@ $(document).ready(function() {
         var newRuleInfo = {
             state: state.val().trim(),
             trans: trans.val().trim(),
-            sales: sales.val().trim()
+            sales: sales.val().trim(),
+            both_criteria: criteria.val()
         }
     
         console.log("new rule info: " + newRuleInfo);
     
-        addRule(newRuleInfo.state, newRuleInfo.trans, newRuleInfo.sales);
+        addRule(newRuleInfo.state, newRuleInfo.trans, newRuleInfo.sales, newRuleInfo.both_criteria);
     
         state.val("");
         trans.val("");
         sales.val("");
-
+        criteria.val("");
         });
     
         //post request to add rules
-        function addRule(state, trans, sales) {
+        function addRule(state, trans, sales, criteria) {
             $.post("/newRule", {
                 state: state,
                 trans: trans,
-                sales: sales
+                sales: sales,
+                criteria: criteria
 
             });
         };
@@ -52,7 +55,7 @@ $(document).ready(function() {
                 for(i=0; i<data.length; i++){
                     var rule = "State: " + data[i].state_name + " " +
                     "Transactions: " + data[i].transaction + " " +
-                    "Sales: " + data[i].sales + " ";
+                    "Sales: " + data[i].sales + " " + "Criteria: " + data[i].both_criteria;
                     $(".rulesHere").append("<br>" + rule + "<br>");
                     
                 }
