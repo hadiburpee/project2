@@ -70,13 +70,14 @@ addClientButton.on('click', function (event) {
                 $(".clientResults").append(compareRules(state, data[0].transaction, data[0].sales, custTrans, custSales));
                 
                 //old console log testing for data returned from database
-                console.log("You have a match: " + state)
-                console.log("Transaction Total in " + state + ": " + data[0].transaction)
-                console.log("Sales Total in " + state + ": " + data[0].sales)
+                // console.log("You have a match: " + state)
+                // console.log("Transaction Total in " + state + ": " + data[0].transaction)
+                // console.log("Sales Total in " + state + ": " + data[0].sales)
             }
             else{
-                console.log("State may not have economic nexus standards: " + state);
+                $(".clientResults").append("State may not have economic nexus standards: " + state + "Please contact: XXXXX");
             }
+            $(".clientResults").val("");
         });
     }
 

@@ -5,40 +5,51 @@ $(document).ready(function() {
 
     // Assign variable to submit button
     var addRuleButton = $('#addRule');
-    
-    // Assign variables to the form items
     var state = $('#state');
     var trans = $('#trans');
     var sales = $('#sales');
+    var criteria = $('#both_criteria');
+    
+    // Assign variables to the form items
+
+
+    // console.log(criteria);
     
     
     
     // Create an event listener
     addRuleButton.on('click', function (event) {
-        event.preventDefault();
+
+        
+        
+        
+        // event.preventDefault();
         console.log("Static JS Button Clicked");
+        console.log("criteria: " + criteria)
         var newRuleInfo = {
             state: state.val().trim(),
             trans: trans.val().trim(),
-            sales: sales.val().trim()
+            sales: sales.val().trim(),
+            criteria: criteria.val().trim()
         }
     
         console.log("new rule info: " + newRuleInfo);
     
-        addRule(newRuleInfo.state, newRuleInfo.trans, newRuleInfo.sales);
+        addRule(newRuleInfo.state, newRuleInfo.trans, newRuleInfo.sales, newRuleInfo.criteria);
     
         state.val("");
         trans.val("");
         sales.val("");
-
+        criteria.val("");
         });
     
         //post request to add rules
-        function addRule(state, trans, sales) {
+        function addRule(state, trans, sales, criteria) {
             $.post("/newRule", {
                 state: state,
                 trans: trans,
-                sales: sales
+                sales: sales,
+                criteria: criteria
 
             });
         };
@@ -50,10 +61,15 @@ $(document).ready(function() {
             }).then(function(data){
                 console.log(data);
                 for(i=0; i<data.length; i++){
-                    var rule = "State: " + data[i].state_name + " " +
-                    "Transactions: " + data[i].transaction + " " +
-                    "Sales: " + data[i].sales + " ";
-                    $(".rulesHere").append("<br>" + rule + "<br>");
+                    var state = data[i].state_name;
+                    var trans = data[i].transaction;
+                    var sales = data[i].sales;
+                    var criteria = data[i].both_criteria;
+                    
+                    $(".state").append("<br>" + state + "<br>");
+                    $(".trans").append("<br>" + trans + "<br>");
+                    $(".sales").append("<br>" + sales + "<br>");
+                    $(".both_either").append("<br>" + criteria + "<br>");
                     
                 }
             });
