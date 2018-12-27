@@ -7,6 +7,7 @@ var managerController = require("../controllers/admin-controllers.js");
 
 router.get('/', managerController.manage);
 router.get('/viewRules', managerController.rules);
+router.get('/viewClients', managerController.clients);
 
 console.log("admin route");
 

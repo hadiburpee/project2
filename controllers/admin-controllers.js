@@ -32,13 +32,13 @@ exports.rules = function (req, res) {
 }
 
 // GET function to return all client info from db
-app.get = function(req, res) {
-    var query = {};
-    if (req.query.id) {
-      query.id = req.query.id
-    }
-    db.user_information.findAll({
-      }).then(function(dbClients) {
-        res.json(dbClients)
-    })
+exports.clients = function(req, res) {
+    db.newclients.findAll({
+        firstName: req.body.firstName,
+        secondName: req.body.secondName,
+        email: req.body.email
+    }).then(function(dbnewClient) {
+        console.log(dbnewClient);
+        res.json(dbnewClient);
+    });
 }
