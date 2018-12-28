@@ -30,11 +30,11 @@ exports.rules = function (req, res) {
     }).then(function(dbRules) {
         res.json(dbRules);
     });
-}
+};
 
 // GET function to return all client info from db
 exports.clients = function(req, res) {
-    db.newclients.findAll({
+    db.newClient.findAll({
         firstName: req.body.firstName,
         secondName: req.body.secondName,
         email: req.body.email

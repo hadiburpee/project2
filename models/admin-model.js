@@ -20,4 +20,20 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
     return nexus_rules;
+
+    var newClient = sequelize.define("newClients", {
+        firstName: {
+            type:  DataTypes.STRING,
+            allowNull: false,
+        },
+        secondName: {
+            type:  DataTypes.STRING,
+            allowNull: false,
+        },
+        email: {
+            type:  DataTypes.STRING,
+            allowNull: false,
+        }
+    });
+    return newClient;
 };
