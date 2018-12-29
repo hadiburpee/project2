@@ -4,14 +4,21 @@
 }
 
 body {
-    max-width: 660px;
-    margin: auto;
     font-family: 'Playfair Display', serif;
 }
 
-#mainContainer {
-  margin-top: 10%;
+.navbar {
+    margin-bottom: 5%;
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.mainContainer {
   font-weight: bolder;
+  max-width: 660px;
+  margin: auto;
 }
 
 
@@ -26,14 +33,6 @@ body {
     font-weight: 400;
 }
 
-.manageForm {
-    border: 1px solid lightgray;
-    background-color: lightgrey;
-    margin-top: 10%;
-    padding: 1%;
-    line-height: 150%;
-    border-radius: 5px;
-}
 
 #addCLient {
     margin-top: 3%;
@@ -41,11 +40,6 @@ body {
 
 .row {  
     margin: 2%;
-}
-
-.TitleRule{
-    text-align: center;
-    font-weight: bold;
 }
 
 .colorgraph {
@@ -61,4 +55,32 @@ body {
 
 hr {
     margin: 0px;
+}
+
+.manageForm {  
+    padding: 2%;
+    line-height: 150%;
+    border-radius: 5px;
+}
+
+.rulesHere {
+    border: 1px solid black;
+    width: 400px;
+}
+
+.TitleRule{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#copyright {
+    font-size: 0.8em;
+    text-align: center;
 }
