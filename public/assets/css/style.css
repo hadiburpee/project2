@@ -4,14 +4,21 @@
 }
 
 body {
-    max-width: 660px;
-    margin: auto;
     font-family: 'Playfair Display', serif;
 }
 
+.navbar {
+    margin-bottom: 5%;
+}
+
+.navbar a {
+    color: white !important;
+}
+
 .mainContainer {
-  margin-top: 10%;
   font-weight: bolder;
+  max-width: 660px;
+  margin: auto;
 }
 
 
@@ -64,4 +71,16 @@ hr {
 .TitleRule{
     text-align: center;
     font-weight: bold;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#copyright {
+    font-size: 0.8em;
+    text-align: center;
 }
