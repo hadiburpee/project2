@@ -14,6 +14,8 @@ var salesInput = $('#sales-input');
 
 // Create an event listener
 addClientButton.on('click', function (event) {
+    //empty modal to remove prior searches, if same user wants to test more than one state
+    $(".clientResults").empty();
     event.preventDefault();
 
     var clientInfo = {
@@ -64,19 +66,21 @@ addClientButton.on('click', function (event) {
         }).then(function(data){
         
             console.log(data);
-
+            //data length 0 means no match
+            if(data.length === 0){
+                // $(".clientResults").append(noMatch());
+                $(".clientResults").append(state + " may not have economic nexus standards, please contact XXXXX");
+            }
+            
             //if state is a match for a state in the db, compare the sales and transaction numbers
-            if(data[0].state_name === state){
+            else if(data[0].state_name === state){
                 $(".clientResults").append(compareRules(state, data[0].transaction, data[0].sales, custTrans, custSales));
-                
-                //old console log testing for data returned from database
-                console.log("You have a match: " + state)
-                console.log("Transaction Total in " + state + ": " + data[0].transaction)
-                console.log("Sales Total in " + state + ": " + data[0].sales)
             }
             else{
-                console.log("State may not have economic nexus standards: " + state);
+                console.log("Else for no match 2");
+                
             }
+            
         });
     }
 
@@ -88,6 +92,10 @@ addClientButton.on('click', function (event) {
         else{
             return "You have not crossed the threshold to collect sales and use tax in: " + state;
         }
+    }
+
+    function noMatch(){
+        return "State may not have economic nexus standards: " + state + "Please contact: XXXXX"
     }
 
 });
