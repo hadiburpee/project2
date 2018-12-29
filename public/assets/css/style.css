@@ -9,7 +9,7 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-#mainContainer {
+.mainContainer {
   margin-top: 10%;
   font-weight: bolder;
 }
@@ -26,14 +26,6 @@ body {
     font-weight: 400;
 }
 
-.manageForm {
-    border: 1px solid lightgray;
-    background-color: lightgrey;
-    margin-top: 10%;
-    padding: 1%;
-    line-height: 150%;
-    border-radius: 5px;
-}
 
 #addCLient {
     margin-top: 3%;
@@ -41,11 +33,6 @@ body {
 
 .row {  
     margin: 2%;
-}
-
-.TitleRule{
-    text-align: center;
-    font-weight: bold;
 }
 
 .colorgraph {
@@ -61,4 +48,20 @@ body {
 
 hr {
     margin: 0px;
+}
+
+.manageForm {  
+    padding: 2%;
+    line-height: 150%;
+    border-radius: 5px;
+}
+
+.rulesHere {
+    border: 1px solid black;
+    width: 400px;
+}
+
+.TitleRule{
+    text-align: center;
+    font-weight: bold;
 }
