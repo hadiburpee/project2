@@ -5,6 +5,7 @@ $(document).ready(function() {
 
     // Assign variable to submit button
     var addRuleButton = $('#addRule');
+    var adminLogin = $('#adminLogin')
     var state = $('#state');
     var trans = $('#trans');
     var sales = $('#sales');
@@ -12,17 +13,8 @@ $(document).ready(function() {
     
     // Assign variables to the form items
 
-
-    // console.log(criteria);
-    
-    
-    
     // Create an event listener
     addRuleButton.on('click', function (event) {
-
-        
-        
-        
         // event.preventDefault();
         console.log("Static JS Button Clicked");
         console.log("criteria: " + criteria)
@@ -74,7 +66,5 @@ $(document).ready(function() {
                 }
             });
         }
-
-
     });
     
