@@ -1,4 +1,5 @@
 var express = require("express");
+var passport = require ("./config/passport");
 
 var PORT = process.env.PORT || 8080;
 
@@ -15,6 +16,13 @@ var expBars = require("express-handlebars");
 
 app.engine("handlebars", expBars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+var isAuth = require ("./config/middleware/isAuthenticated");
+var authCheck = require ("./config/middleware/attachAuthenticationStatus");
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(authCheck);
 
 // var routes1 = require("./routes/user.js");
 require('./routes.js')(app);

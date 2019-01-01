@@ -42,4 +42,14 @@ exports.clients = function(req, res) {
         console.log(dbnewClient);
         res.json(dbnewClient);
     });
+};
+
+exports.loginAdministrator = function(req, res){
+    res.json("/");
+
+};
+
+exports.signOutAdministrator = function(req, res){
+    req.logout();
+    res.redirect("/");
 }
