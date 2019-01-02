@@ -145,7 +145,7 @@
 		</div>
 		<!-- END Modal For Client Request-->
 
-		<!-- START Modal For ADMIN LOGIN-->
+		<!-- START Modal For ADMIN LOGIN CHECK STATIC ADMIN JS FOR PW POST REQ-->
 		<div class="modal fade" id="adminModalCenter" tabindex="-1" role="dialog" aria-labelledby="adminModalCenterTitle"
 		 aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
@@ -156,20 +156,23 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<div class="row">
-				<div class="col">
-					<label for="username">Username</label>
-					<input type="text" class="form-control" id="username">
-				</div>
-				<div class="col">
-					<label for="password">Password</label>
-					<input type="password" class="form-control" id="password">
-				</div>
-			</div>
 
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
-					</div>
+		<form class="login">
+		  	<div id="username-form" class="form-group col-lg-12">
+					<label>Username</label>
+					<input id="username-input" type="text" name="user" placeholder="Username">
+					<small id="username-feedback" class=""></small>
+				</div>
+				<div id="password-form" class="form-group col-lg-12">
+					<label>Password</label>
+					<input id="password-input" type="password" name="pass" placeholder="Password">
+					<small id="password-feedback" class=""></small>
+				</div>
+			<div class="modal-footer">
+				<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+		  	</div>
+		  </form>
+
 				</div>
 			</div>
 		</div>

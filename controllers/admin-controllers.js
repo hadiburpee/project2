@@ -7,7 +7,6 @@ exports.manage = function(req,res){
 
 };
 
-
 exports.addRule = function (req, res) {
     console.log("Add rule hit");
     
@@ -45,7 +44,7 @@ exports.clients = function(req, res) {
 };
 
 exports.loginAdministrator = function(req, res){
-    res.json("/");
+    res.json("/manage");
 
 };
 
@@ -53,3 +52,20 @@ exports.signOutAdministrator = function(req, res){
     req.logout();
     res.redirect("/");
 }
+
+exports.registrationPage = function(req,res) {
+    res.render('manager/registration', {
+      layout: 'admin-registration'
+    });
+  };
+
+exports.signUpAdmin = function(req,res) {
+    db.administrator.create({
+        username: req.body.username,
+        password: req.body.password
+        }).then(function() {
+            res.send({redirect: '/'});
+        }).catch(function(err) {
+            res.json(err);
+        });
+    }

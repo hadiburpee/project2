@@ -7,13 +7,21 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 var managerController = require("../controllers/admin-controllers.js");
 
+
+// GET route /manage
 router.get('/', managerController.manage);
 router.get('/viewRules', managerController.rules);
 router.get('/viewClients', managerController.clients);
 router.get('/sign-out', managerController.signOutAdministrator);
+router.get('/signUp', managerController.registrationPage)
 
-//post for admin login
+// POST route /manage
+router.post('/signUp', managerController.signUpAdmin);
 router.post('/login', passport.authenticate("local"), managerController.loginAdministrator);
+
+
+
+// POST route /newRule
 router.post('/', managerController.addRule);
 
 module.exports = router;
