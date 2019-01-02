@@ -5,7 +5,6 @@ $(document).ready(function() {
 
     // Assign variable to submit button
     var addRuleButton = $('#addRule');
-    var adminLogin = $('#adminLogin')
     var state = $('#state');
     var trans = $('#trans');
     var sales = $('#sales');
@@ -13,7 +12,7 @@ $(document).ready(function() {
     
     // Assign variables to the form items
 
-    // Create an event listener
+    // Create an event listener for adding rules
     addRuleButton.on('click', function (event) {
         // event.preventDefault();
         console.log("Static JS Button Clicked");
@@ -34,7 +33,10 @@ $(document).ready(function() {
         sales.val("");
         criteria.val("");
         });
-    
+
+
+    //====FUNCTIONS==========
+
         //post request to add rules
         function addRule(state, trans, sales, criteria) {
             $.post("/newRule", {
