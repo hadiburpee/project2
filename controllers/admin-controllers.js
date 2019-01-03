@@ -23,14 +23,18 @@ exports.addRule = function (req, res) {
 // Update nexus rules in table
 exports.updateRule = function (req, res) {
     db.nexus_rules.update({
-        state_name: req.body.state,
         transaction: req.body.trans,
         sales: req.body.sales,
         both_criteria: req.body.criteria
-    }, {where: {state_name: req.body.state}}
-    ).then(function(dbupdateRules) {
-        res.json(dbupdateRules);
+    },{
+        where: {
+        state_name: req.body.state
+        }
+
+    }).then(function(dbUpdate){
+
     });
+    
 };
 
 
