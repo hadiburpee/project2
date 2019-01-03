@@ -47,7 +47,9 @@ $(document).ready(function() {
             criteria: criteria.val().trim()
         }
     
-        console.log("new rule info: " + newRuleInfo);
+        console.log(updateRuleInfo);
+
+        console.log("Update rule info: " + updateRuleInfo);
     
         updateRule(updateRuleInfo.state, updateRuleInfo.trans, updateRuleInfo.sales, updateRuleInfo.criteria);
     
@@ -73,13 +75,28 @@ $(document).ready(function() {
 
         //post request to add rules
         function updateRule(state, trans, sales, criteria) {
-            $.post("/updateRule", {
-                state: state,
-                trans: trans,
-                sales: sales,
-                criteria: criteria
+            console.log("Update rule: " + state);
+            
+            $.ajax({
+                method: "PUT",
+                url: "/updateRule",
+                data: {
+                    state: state,
+                    trans: trans,
+                    sales: sales,
+                    criteria: criteria
+                }
+            }).then(function(getData){
+                console.log(getData);
 
-            });
+            })
+
+            // $.put("/updateRule", {
+            //     state: state,
+            //     trans: trans,
+            //     sales: sales,
+            //     criteria: criteria
+            // });
         };
 
         //get request to post all rules in database
@@ -93,7 +110,7 @@ $(document).ready(function() {
 
                     var state = data[i].state_name;
                     var trans = data[i].transaction;
-                     var sales = data[i].sales;
+                    var sales = data[i].sales;
                     var criteria = data[i].both_criteria;
 
                     var rulesData = $("<tr>");

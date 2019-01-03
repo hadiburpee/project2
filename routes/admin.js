@@ -23,6 +23,6 @@ router.post('/login', passport.authenticate("local"), managerController.loginAdm
 
 // POST route /newRule
 router.post('/', managerController.addRule);
-router.post('/', managerController.updateRule);
+router.put('/', managerController.updateRule);
 
 module.exports = router;
