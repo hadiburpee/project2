@@ -44,6 +44,7 @@ exports.clients = function(req, res) {
 };
 
 exports.loginAdministrator = function(req, res){
+    // res.render("/manager/manage")
     res.json("/manage");
 
 };

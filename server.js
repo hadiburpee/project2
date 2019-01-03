@@ -1,5 +1,7 @@
 var express = require("express");
 var passport = require ("./config/passport");
+var session = require("express-session");
+var config = require("./config/extraconfig");
 
 var PORT = process.env.PORT || 8080;
 
@@ -20,6 +22,7 @@ app.set("view engine", "handlebars");
 var isAuth = require ("./config/middleware/isAuthenticated");
 var authCheck = require ("./config/middleware/attachAuthenticationStatus");
 
+app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(authCheck);
