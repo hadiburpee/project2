@@ -1,6 +1,11 @@
 module.exports = function (sequelize, DataTypes) {
     
     var newClient = sequelize.define("newClient", {
+        state: {
+            type:  DataTypes.STRING,
+            allowNull: false,
+            primaryKey: true,
+        },
         firstName: {
             type:  DataTypes.STRING,
             allowNull: false,
@@ -15,10 +20,6 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 isEmail: true
             }
-        },
-        state: {
-            type:  DataTypes.STRING,
-            allowNull: false,
         },
         trans: {
             type:  DataTypes.INTEGER,

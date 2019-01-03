@@ -4,6 +4,7 @@ module.exports = function (sequelize, DataTypes) {
         state_name: {
             type:  DataTypes.STRING,
             allowNull: false,
+            primaryKey: true,
         },
         transaction: {
             type:  DataTypes.INTEGER,
