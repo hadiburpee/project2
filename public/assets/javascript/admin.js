@@ -9,6 +9,7 @@ $(document).ready(function() {
     var trans = $('#trans');
     var sales = $('#sales');
     var criteria = $('#both_criteria');
+    var updateRuleButton = $('#updateRule');
     
     // Assign variables to the form items
 
@@ -34,6 +35,28 @@ $(document).ready(function() {
         criteria.val("");
         });
 
+    // Create an event listener for updating rules
+    updateRuleButton.on('click', function (event) {
+        // event.preventDefault();
+        console.log("Static JS Button Clicked");
+        console.log("criteria: " + criteria)
+        var updateRuleInfo = {
+            state: state.val().trim(),
+            trans: trans.val().trim(),
+            sales: sales.val().trim(),
+            criteria: criteria.val().trim()
+        }
+    
+        console.log("new rule info: " + newRuleInfo);
+    
+        updateRule(updateRuleInfo.state, updateRuleInfo.trans, updateRuleInfo.sales, updateRuleInfo.criteria);
+    
+        state.val("");
+        trans.val("");
+        sales.val("");
+        criteria.val("");
+        });
+
 
     //====FUNCTIONS==========
 
@@ -47,6 +70,18 @@ $(document).ready(function() {
 
             });
         };
+
+        //post request to add rules
+        function updateRule(state, trans, sales, criteria) {
+            $.post("/updateRule", {
+                state: state,
+                trans: trans,
+                sales: sales,
+                criteria: criteria
+
+            });
+        };
+
         //get request to post all rules in database
         function displayRules(){
             $.ajax({

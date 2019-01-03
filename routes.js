@@ -10,6 +10,7 @@ module.exports = function(app){
     app.use('/newRule', managePage);
     app.use('/', newClient);
     app.use('/client', newClient);
+    app.use('/updateRule', managePage);
 
 
 }
