@@ -21,9 +21,16 @@ body {
   margin: auto;
 }
 
+.mainContainer2 {
+    font-weight: bolder;
+    max-width: 860px;
+    margin: auto;
+  }
+  
+
 
 .clientForm {
-    padding: 1%;
+    padding: 3%;
     line-height: 150%;
     border-radius: 5px;
 }
@@ -38,9 +45,6 @@ body {
     margin-top: 3%;
 }
 
-.row {  
-    margin: 2%;
-}
 
 .colorgraph {
   height: 5px;
@@ -63,14 +67,32 @@ hr {
     border-radius: 5px;
 }
 
-.rulesHere {
-    border: 1px solid black;
-    width: 400px;
-}
+/* .rulesHere {
+    width: 100%;
+} */
 
-.TitleRule{
-    text-align: center;
+/* .TitleRule{
+    text-align: left;
     font-weight: bold;
+} */
+
+/* #tableTitles {
+    border-bottom: 1px solid black;
+} */
+
+/* #editColMain, #editColTitle {
+    border-left: 1px solid black;
+} */
+
+table, th, td {
+    border: 1px solid black;
+    /* border-collapse: collapse; */
+    
+  }
+
+#rowOfContents {
+    height: 300px;
+    overflow: scroll;
 }
 
 
