@@ -67,31 +67,14 @@ hr {
     border-radius: 5px;
 }
 
-/* .rulesHere {
-    width: 100%;
-} */
 
-/* .TitleRule{
-    text-align: left;
-    font-weight: bold;
-} */
-
-/* #tableTitles {
+th {
     border-bottom: 1px solid black;
-} */
-
-/* #editColMain, #editColTitle {
-    border-left: 1px solid black;
-} */
-
-table, th, td {
-    border: 1px solid black;
     /* border-collapse: collapse; */
-    
   }
 
-#rowOfContents {
-    height: 300px;
+#dbContents {
+    height: 250px;
     overflow: scroll;
 }
 
