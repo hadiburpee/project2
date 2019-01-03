@@ -9,7 +9,7 @@ exports.manage = function(req,res){
 
 exports.addRule = function (req, res) {
     console.log("Add rule hit");
-    
+
     db.nexus_rules.create({
         state_name: req.body.state,
         transaction: req.body.trans,
@@ -19,6 +19,20 @@ exports.addRule = function (req, res) {
         res.json(dbnewRule);
     });
 };
+
+// Update nexus rules in table
+exports.updateRule = function (req, res) {
+    db.nexus_rules.update({
+        state_name: req.body.state,
+        transaction: req.body.trans,
+        sales: req.body.sales,
+        both_criteria: req.body.criteria
+    }, {where: {state_name: req.body.state}}
+    ).then(function(dbupdateRules) {
+        res.json(dbupdateRules);
+    });
+};
+
 
 exports.rules = function (req, res) {
     db.nexus_rules.findAll({
