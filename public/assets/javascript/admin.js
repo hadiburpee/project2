@@ -58,7 +58,7 @@ $(document).ready(function() {
 
                     var state = data[i].state_name;
                     var trans = data[i].transaction;
-                    var sales = data[i].sales;
+                     var sales = data[i].sales;
                     var criteria = data[i].both_criteria;
 
                     var rulesData = $("<tr>");
@@ -67,17 +67,16 @@ $(document).ready(function() {
 
                     var editButton = $("<button>Update</button>");
                     editButton.addClass("updateBtn");
-                    var deleteButton = $("<button>Delete</button>");
-                    deleteButton.addClass("deleteBtn");
+      
 
                     $("#tableTitles").append(rulesData);
                     
-                    $(rulesData).append("<td>" + state + "<td>");
-                    $(rulesData).append("<td>" + trans + "<td>");
-                    $(rulesData).append("<td>" + sales + "<td>");
-                    $(rulesData).append("<td>" + criteria + "<td>");
+                    $(rulesData).append("<td>" + state + "</td>");
+                    $(rulesData).append("<td>" + trans + "</td>");
+                    $(rulesData).append("<td>" + sales + "</td>");
+                    $(rulesData).append("<td>" + criteria + "</td>");
                     $(rulesData).append(editButton);
-                    $(rulesData).append(deleteButton);
+
               
                 }
             });
