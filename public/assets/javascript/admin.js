@@ -53,18 +53,32 @@ $(document).ready(function() {
                 method: "GET",
                 url: "/manage/viewRules"
             }).then(function(data){
-                console.log(data);
-                for(i=0; i<data.length; i++){
+                console.log("Data: " + data);
+                for (i = 0; i < data.length; i++) {
+
                     var state = data[i].state_name;
                     var trans = data[i].transaction;
                     var sales = data[i].sales;
                     var criteria = data[i].both_criteria;
+
+                    var rulesData = $("<tr>");
+                    rulesData.addClass("rulesData");
+                    rulesData.attr("id", "rulesRow" + i);
+
+                    var editButton = $("<button>Update</button>");
+                    editButton.addClass("updateBtn");
+                    var deleteButton = $("<button>Delete</button>");
+                    deleteButton.addClass("deleteBtn");
+
+                    $("#tableTitles").append(rulesData);
                     
-                    $(".state").append("<br>" + state + "<br>");
-                    $(".trans").append("<br>" + trans + "<br>");
-                    $(".sales").append("<br>" + sales + "<br>");
-                    $(".both_either").append("<br>" + criteria + "<br>");
-                    
+                    $(rulesData).append("<td>" + state + "<td>");
+                    $(rulesData).append("<td>" + trans + "<td>");
+                    $(rulesData).append("<td>" + sales + "<td>");
+                    $(rulesData).append("<td>" + criteria + "<td>");
+                    $(rulesData).append(editButton);
+                    $(rulesData).append(deleteButton);
+              
                 }
             });
         }
