@@ -21,6 +21,7 @@ body {
   margin: auto;
 }
 
+
 #aboutClient {
     text-align:justify;
 }
@@ -93,6 +94,21 @@ table#tableTitles th {
     background-color: #343a3f;
     color: white;
   }
+
+table#tableTitlesClient th {
+    font-weight: 100;
+    font-size: 1.2em;
+    background-color: #343a3f;
+    color: white;
+  }
+
+table#tableTitlesClient tr:nth-child(even) {
+    background-color: #eee;
+}
+table#tableTitlesClient tr:nth-child(odd) {
+    background-color: #fff;
+}
+
 
 table#tableTitles tr:nth-child(even) {
     background-color: #eee;
