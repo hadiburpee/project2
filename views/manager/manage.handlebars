@@ -6,28 +6,37 @@
 {{!-- +++++++++++AUTHORIZATION IS COMMENTED OUT BELOW+++++++++++++ --}}
 
 {{#if isAuthenticated}}
- 
+
 
 <div class="mainContainer2">
 	<h2>Administrator View</h2>
 	<hr class="colorgraph">
-	
+
+	{{!-- Start collapse --}}
+	<button class="collapsible1">View Nexus rule table</button>
+	<div class="ruleTablecontent">
 
 
-<h5 class="TitleRule">Nexus Rule Table</h5>
-<div id="dbContents">
-<table id="tableTitles" style="width:100%">
-	<tr id="headerRow">
-		<th style="width:25%">State</th>
-		<th style="width:25%">Transactions</th>
-		<th style="width:25%">Sales</th>
-		<th style="width:25%">Both/Either</th>
-	</tr>
-</table>
-</div>
+		<h5 class="TitleRule">Nexus Rule Table</h5>
+		{{!-- <div id="dbContents"> --}}
+			<table style="width:100%">
+				<thead id="tHeadAdmin">
+					<tr>
+						<th style="width:25%" class="thAdmin">State</th>
+						<th style="width:25%" class="thAdmin">Transactions</th>
+						<th style="width:25%" class="thAdmin">Sales</th>
+						<th style="width:25%" class="thAdmin">Both/Either</th>
+					</tr>
+				<tbody id="tableBody"></tbody>
+				</thead>
+			</table>
+		{{!-- </div> --}}
+	</div>
+	{{!-- End collapse --}}
 
 
-<div class="manageForm">
+
+	<div class="manageForm">
 		<form>
 
 			<div class="row">
@@ -120,61 +129,64 @@
 
 <div class="mainContainer2">
 
-<h5 class="TitleClient">Client Information Table</h5>
-<div id="dbContentsClient">
-<table id="tableTitlesClient" style="width:100%">
-	<tr id="headerRowClient">
-		<th style="width:18%">First</th>
-		<th style="width:18%">Last</th>
-		<th style="width:18%">Email</th>
-		<th style="width:18%">Sales</th>
-		<th style="width:18%">Transactions</th>
-		<th style="width:10%">State</th>
-		
-	</tr>
-</table>
+	<button class="collapsible1">View Nexus rule table</button>
+	<div class="ruleTablecontent">
+
+	<h5 class="TitleClient">Client Information Table</h5>
+		<table style="width:100%">
+			<thead>
+			<tr>
+				<th style="width:16.66%" class="thClientHead">First</th>
+				<th style="width:16.66%" class="thClientHead">Last</th>
+				<th style="width:16.66%" class="thClientHead">Email</th>
+				<th style="width:16.66%" class="thClientHead">Sales</th>
+				<th style="width:16.66%" class="thClientHead">Transactions</th>
+				<th style="width:16.66%" class="thClientHead">State</th>
+			</tr>
+			</thead>
+			<tbody id="tableBodyClient"></tbody>
+		</table>
+</div>
 </div>
 
-</div>
-		
 
 
 {{else}}
 <h1>Please log in to view this page</h1>
 
 <!-- START Modal For ADMIN LOGIN CHECK STATIC ADMIN JS FOR PW POST REQ-->
-		<div class="modal fade" id="adminModalCenter" tabindex="-1" role="dialog" aria-labelledby="adminModalCenterTitle"
-		 aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="adminModalLongTitle">Admin Login</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-
-					<form class="login">
-						<div id="username-form" class="form-group col-lg-12">
-							<label>Username</label>
-							<input id="username-input" type="text" name="user" placeholder="Username">
-							<small id="username-feedback" class=""></small>
-						</div>
-						<div id="password-form" class="form-group col-lg-12">
-							<label>Password</label>
-							<input id="password-input" type="password" name="pass" placeholder="Password">
-							<small id="password-feedback" class=""></small>
-						</div>
-						<div class="modal-footer">
-							<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-						</div>
-					</form>
-
-				</div>
+<div class="modal fade" id="adminModalCenter" tabindex="-1" role="dialog" aria-labelledby="adminModalCenterTitle"
+ aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="adminModalLongTitle">Admin Login</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 			</div>
-		</div>
 
-		<!-- END Modal For ADMIN LOGIN-->
+			<form class="login">
+				<div id="username-form" class="form-group col-lg-12">
+					<label>Username</label>
+					<input id="username-input" type="text" name="user" placeholder="Username">
+					<small id="username-feedback" class=""></small>
+				</div>
+				<div id="password-form" class="form-group col-lg-12">
+					<label>Password</label>
+					<input id="password-input" type="password" name="pass" placeholder="Password">
+					<small id="password-feedback" class=""></small>
+				</div>
+				<div class="modal-footer">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+<!-- END Modal For ADMIN LOGIN-->
 
 {{/if}}
 

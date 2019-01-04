@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     // Create an event listener for adding rules
     addRuleButton.on('click', function (event) {
-        // event.preventDefault();
+        event.preventDefault();
         console.log("Static JS Button Clicked");
         console.log("criteria: " + criteria)
         var newRuleInfo = {
@@ -127,13 +127,14 @@ $(document).ready(function() {
                     var rulesData = $("<tr>");
                     rulesData.addClass("rulesData");
                     rulesData.attr("id", "rulesRow" + i);
-
-                    $("#tableTitles").append(rulesData);
                     
-                    $(rulesData).append("<td>" + state + "</td>");
-                    $(rulesData).append("<td>" + trans + "</td>");
-                    $(rulesData).append("<td>" + sales + "</td>");
-                    $(rulesData).append("<td>" + criteria + "</td>");
+
+                    $("#tableBody").append(rulesData);
+                    
+                    $(rulesData).append("<td class='tdRules'>" + state + "</td>");
+                    $(rulesData).append("<td class='tdRules'>" + trans + "</td>");
+                    $(rulesData).append("<td class='tdRules'>" + sales + "</td>");
+                    $(rulesData).append("<td class='tdRules'>" + criteria + "</td>");
     
                 }
             });
@@ -174,19 +175,35 @@ $(document).ready(function() {
                     clientData.addClass("clientData");
                     clientData.attr("id", "clientRow" + i);
 
-                    $("#tableTitlesClient").append(clientData);
+                    $("#tableBodyClient").append(clientData);
                     
-                    $(clientData).append("<td>" + first + "</td>");
-                    $(clientData).append("<td>" + last + "</td>");
-                    $(clientData).append("<td>" + email + "</td>");
-                    $(clientData).append("<td>" + trans + "</td>");
-                    $(clientData).append("<td>" + sales + "</td>");
-                    $(clientData).append("<td>" + state + "</td>");
+                    $(clientData).append("<td class='tdClient'>" + first + "</td>");
+                    $(clientData).append("<td class='tdClient'>" + last + "</td>");
+                    $(clientData).append("<td class='tdClient'>" + email + "</td>");
+                    $(clientData).append("<td class='tdClient'>" + trans + "</td>");
+                    $(clientData).append("<td class='tdClient'>" + sales + "</td>");
+                    $(clientData).append("<td class='tdClient'>" + state + "</td>");
                     
                 }
             })
         }
 
+
+        // Collapse Nexus rules table 
+        var coll = $(".collapsible1");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        });
+        }
 
     });
     
