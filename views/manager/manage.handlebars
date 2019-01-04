@@ -5,7 +5,7 @@
 
 {{!-- +++++++++++AUTHORIZATION IS COMMENTED OUT BELOW+++++++++++++ --}}
 
-{{#if isAuthenticated}}
+{{#if isAuthenticated}} 
 
 
 <div class="mainContainer2">
@@ -30,7 +30,7 @@
 				<tbody id="tableBody"></tbody>
 				</thead>
 			</table>
-		{{!-- </div> --}}
+			{{!-- </div> --}}
 	</div>
 	{{!-- End collapse --}}
 
@@ -121,33 +121,36 @@
 	</div>
 </div>
 
-<a href="/manage/signUp">Add Administrator</a>
-
-
-<hr class="colorgraph">
 </div>
 
 <div class="mainContainer2">
 
-	<button class="collapsible1">View Nexus rule table</button>
+	<button class="collapsible1">View client information</button>
 	<div class="ruleTablecontent">
 
-	<h5 class="TitleClient">Client Information Table</h5>
+		<h5 class="TitleClient">Client Information Table</h5>
 		<table style="width:100%">
 			<thead>
-			<tr>
-				<th style="width:16.66%" class="thClientHead">First</th>
-				<th style="width:16.66%" class="thClientHead">Last</th>
-				<th style="width:16.66%" class="thClientHead">Email</th>
-				<th style="width:16.66%" class="thClientHead">Sales</th>
-				<th style="width:16.66%" class="thClientHead">Transactions</th>
-				<th style="width:16.66%" class="thClientHead">State</th>
-			</tr>
+				<tr>
+					<th style="width:16.66%" class="thClientHead">First</th>
+					<th style="width:16.66%" class="thClientHead">Last</th>
+					<th style="width:16.66%" class="thClientHead">Email</th>
+					<th style="width:16.66%" class="thClientHead">Sales</th>
+					<th style="width:16.66%" class="thClientHead">Transactions</th>
+					<th style="width:16.66%" class="thClientHead">State</th>
+				</tr>
 			</thead>
 			<tbody id="tableBodyClient"></tbody>
 		</table>
+	</div>
+
+	<hr class="colorgraph">
+
+	<a href="/manage/signUp" id="addAdmin">Add Administrator</a>
+
 </div>
-</div>
+
+
 
 
 
