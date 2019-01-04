@@ -4,7 +4,7 @@ var db = require("../models");
 exports.manage = function(req,res){
     console.log("admin controller");
     res.render('manager/manage');
-
+ 
 };
 
 exports.addRule = function (req, res) {
