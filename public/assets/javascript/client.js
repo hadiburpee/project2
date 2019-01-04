@@ -10,10 +10,17 @@ var emailInput = $('#email-input');
 var stateInput = $('#state-selector');
 var transactionsInput = $('#transaction-input');
 var salesInput = $('#sales-input');
-
+var emailFeedback = $("#email-feedback");
+var emailTest = null;
 
 // Create an event listener
 addClientButton.on('click', function (event) {
+  
+    if (!emailTest) {
+        alert("Please enter a valid email address");
+    }
+
+    else {
     //empty modal to remove prior searches, if same user wants to test more than one state
     $(".clientResults").empty();
     event.preventDefault();
@@ -39,7 +46,9 @@ addClientButton.on('click', function (event) {
     stateInput.val("");
     transactionsInput.val("");
     salesInput.val("");
-
+    emailFeedback.text("");
+   
+        }
     });
 
     //adds user to database
@@ -97,5 +106,25 @@ addClientButton.on('click', function (event) {
     function noMatch(){
         return "State may not have economic nexus standards: " + state + "Please contact: XXXXX"
     }
+
+
+
+
+        // Live email validation
+        emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        emailInput.bind('input propertychange', function() {
+            if (!emailRegEx.test($(this).val()))  {
+                $("#email-form").removeClass("has-success");
+                $("#email-form").addClass("has-error");
+                emailFeedback.text("Invalid Email");
+                emailTest = false;
+            } 
+            else {
+                $("#email-form").removeClass("has-error");
+                $("#email-form").addClass("has-success");
+                emailFeedback.text("Valid Email!");
+                emailTest = true;
+            }
+        });
 
 });
