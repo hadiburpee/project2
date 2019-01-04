@@ -4,6 +4,7 @@ module.exports = function(app){
 
     const managePage = require("./routes/admin");
     const newClient = require("./routes/client");
+    const contactPage = require("./routes/contact");
     
 
     app.use('/manage', managePage);
@@ -11,6 +12,7 @@ module.exports = function(app){
     app.use('/', newClient);
     app.use('/client', newClient);
     app.use('/updateRule', managePage);
+    app.use('/contact', contactPage);
 
 
 }
