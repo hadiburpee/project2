@@ -1,6 +1,7 @@
 $(document).ready(function() {
     //display current database rules
     displayRules();
+    getClientData();
 
 
     // Assign variable to submit button
@@ -119,8 +120,6 @@ $(document).ready(function() {
                 for (i = 0; i < data.length; i++) {
 
                     var state = data[i].state_name;
-                    //need to either return state or verify it here.
-                    var stateCheck = stateCheck;
                     var trans = data[i].transaction;
                     var sales = data[i].sales;
                     var criteria = data[i].both_criteria;
@@ -155,6 +154,39 @@ $(document).ready(function() {
                     }
             });
         }
+
+        //get request for client data
+        function getClientData(){
+            $.ajax({
+                method: "GET",
+                url: "/manage/viewClients"
+            }).then(function(data){
+                for(i=0; i<data.length; i++){
+                    var first = data[i].firstName;
+                    var last = data[i].secondName;
+                    var email = data[i].email;
+                    var trans = data[i].trans;
+                    var sales = data[i].sales;
+                    var state = data[i].state;
+
+
+                    var clientData = $("<tr>");
+                    clientData.addClass("clientData");
+                    clientData.attr("id", "clientRow" + i);
+
+                    $("#tableTitlesClient").append(clientData);
+                    
+                    $(clientData).append("<td>" + first + "</td>");
+                    $(clientData).append("<td>" + last + "</td>");
+                    $(clientData).append("<td>" + email + "</td>");
+                    $(clientData).append("<td>" + trans + "</td>");
+                    $(clientData).append("<td>" + sales + "</td>");
+                    $(clientData).append("<td>" + state + "</td>");
+                    
+                }
+            })
+        }
+
 
     });
     
