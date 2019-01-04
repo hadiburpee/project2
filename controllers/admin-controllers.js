@@ -68,8 +68,11 @@ exports.loginAdministrator = function(req, res){
 };
 
 exports.signOutAdministrator = function(req, res){
+    console.log("sign out hit");
+    
     req.logout();
     res.redirect("/");
+    // res.json("./")
 }
 
 exports.registrationPage = function(req,res) {

@@ -109,6 +109,8 @@ $(document).ready(function() {
                 for (i = 0; i < data.length; i++) {
 
                     var state = data[i].state_name;
+                    //need to either return state or verify it here.
+                    var stateCheck = stateCheck;
                     var trans = data[i].transaction;
                     var sales = data[i].sales;
                     var criteria = data[i].both_criteria;
