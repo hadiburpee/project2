@@ -117,19 +117,13 @@ $(document).ready(function() {
                     rulesData.addClass("rulesData");
                     rulesData.attr("id", "rulesRow" + i);
 
-                    var editButton = $("<button>Update</button>");
-                    editButton.addClass("updateBtn");
-      
-
                     $("#tableTitles").append(rulesData);
                     
                     $(rulesData).append("<td>" + state + "</td>");
                     $(rulesData).append("<td>" + trans + "</td>");
                     $(rulesData).append("<td>" + sales + "</td>");
                     $(rulesData).append("<td>" + criteria + "</td>");
-                    $(rulesData).append(editButton);
-
-              
+    
                 }
             });
         }

@@ -21,14 +21,10 @@ body {
   margin: auto;
 }
 
-.mainContainer2 {
-    font-weight: bolder;
-    max-width: 860px;
-    margin: auto;
-  }
+#aboutClient {
+    text-align:justify;
+}
   
-
-
 .clientForm {
     padding: 3%;
     line-height: 150%;
@@ -43,7 +39,14 @@ body {
 
 #addCLient {
     margin-top: 3%;
+    background-color: #343a3f;
 }
+
+#addCLient:hover {
+    background-color: grey;
+}
+
+
 
 
 .colorgraph {
@@ -61,22 +64,75 @@ hr {
     margin: 0px;
 }
 
+
+/* =========== Admin Page ============*/
+.mainContainer2 {
+    font-weight: bolder;
+    max-width: 860px;
+    margin: auto;
+} 
+
+.TitleRule {
+    font-size: 1.5em;
+}
+
 .manageForm {  
     padding: 2%;
     line-height: 150%;
     border-radius: 5px;
 }
 
-
 th {
-    border-bottom: 1px solid black;
-    /* border-collapse: collapse; */
+    font-weight: 100;
+    font-size: 1.2em;
+}
+
+table#tableTitles th {
+    font-weight: 100;
+    font-size: 1.2em;
+    background-color: #343a3f;
+    color: white;
   }
 
-#dbContents {
-    height: 250px;
-    overflow: scroll;
+table#tableTitles tr:nth-child(even) {
+    background-color: #eee;
 }
+table#tableTitles tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+#dbContents {
+    height: 300px;
+    overflow: scroll;
+    border-bottom: 1px solid black;
+}
+
+#btnRow {
+    width: 100%;
+}
+
+#addRule, #updateRule, #fill {
+    margin-top: 1%;
+    float: left;
+}
+
+#addRule, #updateRule {
+   background-color: #343a3f;
+}
+
+#addRule:hover, #updateRule:hover {
+    background-color: grey;
+}
+
+#updateRule {
+  margin-left: 1%;
+}
+
+#fill {
+    font-size: 1em;
+}
+
+/* =========== End admin Page ============*/
 
 
 footer {
