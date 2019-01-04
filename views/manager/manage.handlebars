@@ -5,16 +5,16 @@
 
 {{!-- +++++++++++AUTHORIZATION IS COMMENTED OUT BELOW+++++++++++++ --}}
 
-{{!-- {{#if isAuthenticated}} --}}
+{{#if isAuthenticated}}
  
 
 <div class="mainContainer2">
-	<h2>Manage Admin</h2>
+	<h2>Administrator View</h2>
 	<hr class="colorgraph">
 	
 
 
-<h5 class="TitleRule">Rule Display</h5>
+<h5 class="TitleRule">Nexus Rule Table</h5>
 <div id="dbContents">
 <table id="tableTitles" style="width:100%">
 	<tr id="headerRow">
@@ -112,14 +112,53 @@
 	</div>
 </div>
 
+<a href="/manage/signUp">Add Administrator</a>
+
 
 <hr class="colorgraph">
 </div>
 
-{{!-- {{else}}
-<h1>Not Authenticated</h1>
+		
 
-{{/if}} --}}
+
+{{else}}
+<h1>Please log in to view this page</h1>
+
+<!-- START Modal For ADMIN LOGIN CHECK STATIC ADMIN JS FOR PW POST REQ-->
+		<div class="modal fade" id="adminModalCenter" tabindex="-1" role="dialog" aria-labelledby="adminModalCenterTitle"
+		 aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="adminModalLongTitle">Admin Login</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<form class="login">
+						<div id="username-form" class="form-group col-lg-12">
+							<label>Username</label>
+							<input id="username-input" type="text" name="user" placeholder="Username">
+							<small id="username-feedback" class=""></small>
+						</div>
+						<div id="password-form" class="form-group col-lg-12">
+							<label>Password</label>
+							<input id="password-input" type="password" name="pass" placeholder="Password">
+							<small id="password-feedback" class=""></small>
+						</div>
+						<div class="modal-footer">
+							<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- END Modal For ADMIN LOGIN-->
+
+{{/if}}
 
 {{!-- +++++++++++AUTHORIZATION IS COMMENTED OUT BELOW+++++++++++++ --}}
 
