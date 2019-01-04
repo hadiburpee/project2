@@ -27,8 +27,15 @@ $(document).ready(function() {
     
         console.log("new rule info: " + newRuleInfo);
     
+        if(noDoubleState(newRuleInfo.state) === false){
+            console.log("rule already there");
+            event.preventDefault();
+            return alert("This state has already been added.  Please either use update rule button or choose another state to add");
+        }
+        else{
         addRule(newRuleInfo.state, newRuleInfo.trans, newRuleInfo.sales, newRuleInfo.criteria);
-    
+        }
+
         state.val("");
         trans.val("");
         sales.val("");
@@ -64,6 +71,9 @@ $(document).ready(function() {
 
         //post request to add rules
         function addRule(state, trans, sales, criteria) {
+            
+            
+            
             $.post("/newRule", {
                 state: state,
                 trans: trans,
@@ -129,5 +139,22 @@ $(document).ready(function() {
                 }
             });
         }
+
+        //make sure states cant be added twice
+        function noDoubleState(state){
+            $.ajax({
+                method: "GET",
+                url: "/manage/viewRules"
+            }).then(function(data){
+                for(i = 0; i< data.length; i++)
+                    if(state === data[i].state_name){
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+            });
+        }
+
     });
     
