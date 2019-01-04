@@ -6,16 +6,32 @@
 {{!-- +++++++++++AUTHORIZATION IS COMMENTED OUT BELOW+++++++++++++ --}}
 
 {{!-- {{#if isAuthenticated}} --}}
-
+ 
 
 <div class="mainContainer2">
 	<h2>Manage Admin</h2>
 	<hr class="colorgraph">
-	<div class="manageForm">
+	
+
+
+<h5 class="TitleRule">Rule Display</h5>
+<div id="dbContents">
+<table id="tableTitles" style="width:100%">
+	<tr id="headerRow">
+		<th style="width:25%">State</th>
+		<th style="width:25%">Transactions</th>
+		<th style="width:25%">Sales</th>
+		<th style="width:25%">Both/Either</th>
+	</tr>
+</table>
+</div>
+
+
+<div class="manageForm">
 		<form>
 
 			<div class="row">
-				<p class="TitleRule">Add/Update Rule Form</p>
+				<p class="TitleRule2">Add/Update Rule Form</p>
 			</div>
 
 			<div class="row">
@@ -85,28 +101,16 @@
 						<option value="both">Both</option>
 					</select>
 					{{!-- </div> --}}
-				<button type="submit" class="btn btn-primary" id="addRule">Add Rule</button>
-				<button type="submit" class="btn btn-primary" id="updateRule">Update Rule</button>
-				
+			</div>
+			<div class="row" id="btnRow">
+				<h6 id="fill">Fill in the required fields to ADD or UPDATE a rule</h6>
+				<div id="btnRow">
+					<button type="submit" class="btn btn-secondary" id="addRule">Add Rule</button>
+					<button type="submit" class="btn btn-secondary" id="updateRule">Update Rule</button>
+				</div>
 		</form>
 	</div>
-
-
 </div>
-
-<h5 class="TitleRule">Rule Display</h5>
-<div id="dbContents">
-<table id="tableTitles" style="width:100%">
-	<tr>
-		<th>State</th>
-		<th>Trans</th>
-		<th>Sales</th>
-		<th>Both/Either</th>
-		<th>Edit</th>
-	</tr>
-</table>
-</div>
-
 
 
 <hr class="colorgraph">
