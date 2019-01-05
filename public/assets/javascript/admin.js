@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     // Create an event listener for adding rules
     addRuleButton.on('click', function (event) {
-        event.preventDefault();
+        // event.preventDefault();
         console.log("Static JS Button Clicked");
         console.log("criteria: " + criteria)
         var newRuleInfo = {
