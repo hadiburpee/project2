@@ -7,4 +7,4 @@ var contactController = require("../controllers/contact-controller");
 router.get('/', contactController.contact);
 
 
-module.exports = router;
+module.exports = router; 

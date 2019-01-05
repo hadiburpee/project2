@@ -37,6 +37,7 @@ app.listen(PORT, function () {
     console.log("============================================" + "\nCLIENT: http://localhost:" + PORT);
     console.log("============================================" + "\nADMIN:  http://localhost:" + PORT + "/manage" 
     + "\n============================================" + "\nCONTACT:  http://localhost:" + PORT + "/contact" 
+    + "\n============================================" + "\nINFO:  http://localhost:" + PORT + "/info" 
     + "\n============================================");
     });
 });
