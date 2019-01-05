@@ -24,10 +24,10 @@
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "statetax_db",
-      "host": "127.0.0.1",
+      "username": "zfdostimbutphb7g",
+      "password": "dpbw18472084ytfz",
+      "database": "eg6r1tibfmxe664p",
+      "host": "gtizpe105piw2gfq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "port": 3306,
       "dialect": "mysql"
     }
