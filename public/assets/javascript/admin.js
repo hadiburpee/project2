@@ -179,10 +179,10 @@ $(document).ready(function() {
                     
                     $(clientData).append("<td class='tdClient'>" + first + "</td>");
                     $(clientData).append("<td class='tdClient'>" + last + "</td>");
-                    $(clientData).append("<td class='tdClient'>" + email + "</td>");
                     $(clientData).append("<td class='tdClient'>" + trans + "</td>");
                     $(clientData).append("<td class='tdClient'>" + sales + "</td>");
                     $(clientData).append("<td class='tdClient'>" + state + "</td>");
+                    $(clientData).append("<td class='tdClient'>" + email + "</td>");
                     
                 }
             })

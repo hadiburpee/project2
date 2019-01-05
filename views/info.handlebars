@@ -14,7 +14,7 @@
 
 	<div id="infoPage">
 
-		<h2 id="infoTitle">Info goes here</h2>
+		<h2 id="infoTitle">About Economic Nexus</h2>
 		<div id="infoDiv">
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, repellat modi exercitationem maiores
 				possimus
@@ -32,6 +32,40 @@
 	<hr class="colorgraph">
 
 </div>
+
+<!-- START Modal For ADMIN LOGIN CHECK STATIC ADMIN JS FOR PW POST REQ-->
+<div class="modal fade" id="adminModalCenter" tabindex="-1" role="dialog" aria-labelledby="adminModalCenterTitle"
+ aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="adminModalLongTitle">Admin Login</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<form class="login">
+				<div id="username-form" class="form-group col-lg-12">
+					<label>Username</label>
+					<input id="username-input" type="text" name="user" placeholder="Username">
+					<small id="username-feedback" class=""></small>
+				</div>
+				<div id="password-form" class="form-group col-lg-12">
+					<label>Password</label>
+					<input id="password-input" type="password" name="pass" placeholder="Password">
+					<small id="password-feedback" class=""></small>
+				</div>
+				<div class="modal-footer">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login" id="modalSubmit">
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+<!-- END Modal For ADMIN LOGIN-->
 
 {{!-- ===================== START FOOTER ====================== --}}
 {{> footer }}
