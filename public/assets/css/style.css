@@ -9,11 +9,14 @@ body {
 
 .navbar {
     margin-bottom: 5%;
+    overflow: hidden;
 }
 
 .navbar a {
     color: white !important;
 }
+
+
 
 .mainContainer {
   font-weight: bolder;
@@ -64,6 +67,11 @@ hr {
 
 
 /* =========== Admin Page ============*/
+
+#loginToView {
+    text-align: center;
+}
+
 .mainContainer2 {
     font-weight: bolder;
     max-width: 860px;
@@ -212,6 +220,25 @@ tbody {
 }
 
 /* =========== End admin Page ============*/
+
+#phone, #mail, #location {
+    width: 33%;
+    text-align: center;
+}
+
+#contactRow {
+    margin-top: 10%;
+}
+
+
+#modalSubmit {
+    color: white;
+    background-color: #343a3f;
+}
+
+#username-form {
+    margin-top: 2%;
+}
 
 #infoDiv {
     height: 300px;
