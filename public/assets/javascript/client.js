@@ -83,7 +83,7 @@ addClientButton.on('click', function (event) {
             
             //if state is a match for a state in the db, compare the sales and transaction numbers
             else if(data[0].state_name === state){
-                $(".clientResults").append(compareRules(state, data[0].transaction, data[0].sales, custTrans, custSales));
+                $(".clientResults").append(compareRules(state, data[0].transaction, data[0].sales, data[0].both_criteria, custTrans, custSales));
             }
             else{
                 console.log("Else for no match 2");
@@ -94,13 +94,28 @@ addClientButton.on('click', function (event) {
     }
 
     //function to compare rules
-    function compareRules(state, dbTrans, dbSales, custTrans, custSales){
-        if(dbTrans < custTrans || dbSales < custSales){
-            return "You may need to register for sales and use tax in: " + state + ".  Please contact: XXXXXXX";
+    function compareRules(state, dbTrans, dbSales, dbCriteria, custTrans, custSales){
+        console.log(dbCriteria);
+        if(dbCriteria === "either"){
+            if(dbTrans < custTrans || dbSales < custSales){
+                return "You may need to register for sales and use tax in: " + state + ".  Please contact: XXXXXXX";
+            }
+            else{
+                return "You have not crossed the threshold to collect sales and use tax in: " + state;
+            }
+        }
+        else if(dbCriteria === "both"){
+            if(dbTrans < custTrans && dbSales < custSales){
+                return "You may need to register for sales and use tax in: " + state + ".  Please contact: XXXXXXX";
+            }
+            else{
+                return "You have not crossed the threshold to collect sales and use tax in: " + state;
+            }
         }
         else{
-            return "You have not crossed the threshold to collect sales and use tax in: " + state;
-        }
+            return "You may not have economic nexus";
+        }   
+        
     }
 
     function noMatch(){
