@@ -213,6 +213,18 @@ tbody {
 
 /* =========== End admin Page ============*/
 
+#infoDiv {
+    height: 300px;
+}
+
+#infoTitle {
+    margin-bottom: 5%;
+}
+
+#infoPage {
+   padding: 2%;
+   text-align:justify;
+}
 
 footer {
     position: absolute;
